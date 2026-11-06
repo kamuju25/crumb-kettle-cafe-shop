@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crumb &amp; Kettle – Coffee and Cookies</title>
+  <meta name="description" content="Small-batch coffee and fresh-baked cookies. Browse the menu and build your order.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#"><img src="assets/img/logo.svg" alt="" width="36" height="36"> Crumb &amp; Kettle</a>
+    <nav aria-label="Main">
+      <a href="#menu">Menu</a>
+      <a href="#visit">Visit</a>
+      <button id="cart-toggle" class="cart-btn" aria-controls="cart" aria-expanded="false">Order <span id="cart-count">0</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Coffee roasted on Tuesday. Cookies baked at 6&nbsp;a.m.</h1>
+        <p>A small corner cafe with a short menu, done well. Pick your cup, pick your cookie, and we&rsquo;ll have it ready.</p>
+        <a class="btn" href="#menu">See the menu</a>
+      </div>
+      <img class="hero-art" src="assets/img/hero.svg" alt="A cup of coffee beside a chocolate chip cookie" width="520" height="420">
+    </section>
+
+    <section id="menu" class="menu">
+      <div class="menu-head">
+        <h2>Menu</h2>
+        <div class="filters" role="group" aria-label="Filter menu">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="coffee">Coffee</button>
+          <button class="chip" data-filter="cookie">Cookies</button>
+        </div>
+      </div>
+      <ul id="menu-list" class="grid"></ul>
+    </section>
+
+    <section id="visit" class="visit">
+      <h2>Visit us</h2>
+      <p>12 Front Street, open daily 7:00&ndash;17:00.<br>Dine in, take away, or pre-order here and skip the line.</p>
+    </section>
+  </main>
+
+  <footer>&copy; <span id="year"></span> Crumb &amp; Kettle. Demo site hosted on AWS.</footer>
+
+  <aside id="cart" class="cart" aria-label="Your order" hidden>
+    <div class="cart-head"><h2>Your order</h2><button id="cart-close" class="link" aria-label="Close order panel">Close</button></div>
+    <ul id="cart-items"></ul>
+    <p id="cart-empty">Nothing here yet. Add a coffee or a cookie from the menu.</p>
+    <div class="cart-foot">
+      <p class="total">Total <strong id="cart-total">$0.00</strong></p>
+      <button id="checkout" class="btn" disabled>Place pickup order</button>
+      <p id="cart-msg" role="status"></p>
+    </div>
+  </aside>
+
+  <script src="js/menu-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
